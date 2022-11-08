@@ -1,5 +1,5 @@
 #!/bin/bash
 
 /bin/bash ~/Scripts/wp-autochange.sh &
-picom --experimental-backends --config ~/.config/picom/picom.conf &
+picom --experimental-backends -b
 ~/Scripts/autostart_wait.sh &
