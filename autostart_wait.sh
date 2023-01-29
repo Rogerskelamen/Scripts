@@ -1,12 +1,12 @@
 #!/bin/bash
 
 sleep 1
-fcitx5 &
 cbatticon &
+pulseaudio &
 
 sleep 2
-pulseaudio &
+fcitx5 &
 pasystray &
 
-sleep 2
+sleep 1
 /opt/clash_for_linux/cfw &
