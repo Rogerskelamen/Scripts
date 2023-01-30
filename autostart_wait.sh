@@ -1,7 +1,6 @@
 #!/bin/bash
 
 sleep 1
-cbatticon &
 pulseaudio &
 
 sleep 2
