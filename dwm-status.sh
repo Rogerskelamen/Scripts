@@ -2,20 +2,23 @@ print_volume() {
 	volume="$(amixer get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
 	if test "$volume" -gt 0
 	then
-		echo -e "$volume"
+		echo -e "$volume%"
 	else
 		echo -e "婢Mute"
 	fi
 }
 
 print_mem(){
-	memfree=$(($(grep -m1 'MemAvailable:' /proc/meminfo | awk '{print $2}') / 1024))
-	echo -e "$memfree"
+	let memusage=$(free | awk '(NR==2){ print $3 }')
+	let memshared=$(free | awk '(NR==2){ print $5 }')
+	echo $((
+		($memusage+$memshared) / 1024
+	))
 }
 
 get_battery_percentage() {
 	percentage=$(acpi -b | awk '{print $4}' | tr -d ',')
-	if [[ "$percentage" == "charging" ]];
+	if [[ "$percentage" == "charging" ]]
 	then
 		echo "100%";
 	else
