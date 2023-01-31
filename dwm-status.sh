@@ -8,12 +8,16 @@ print_volume() {
 	fi
 }
 
-print_mem(){
+print_mem() {
 	let memusage=$(free | awk '(NR==2){ print $3 }')
 	let memshared=$(free | awk '(NR==2){ print $5 }')
 	echo $((
 		($memusage+$memshared) / 1024
 	))
+}
+
+print_temp() {
+	sed 's/000$/°C/' /sys/class/thermal/thermal_zone0/temp
 }
 
 get_battery_percentage() {
@@ -44,4 +48,4 @@ print_date() {
 	date '+%Y年%m月%d日 %H:%M'
 }
 
-xsetroot -name "$(print_mem)M $(print_volume) [ $(print_bat) ] $(print_date) "
+xsetroot -name "$(print_mem)M $(print_temp) $(print_volume) [ $(print_bat) ] $(print_date) "
