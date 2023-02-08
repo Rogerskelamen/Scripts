@@ -45,7 +45,7 @@ print_bat() {
 }
 
 print_date() {
-	date '+%Y年%m月%d日 %H:%M'
+	date +"%m月%d日 %a %H:%M" | sed 's/Mon/周一/; s/Tue/周二/; s/Wed/周三/; s/Thu/周四/; s/Fri/周五/; s/Sat/周六/; s/Sun/周日/'
 }
 
-xsetroot -name "$(print_mem)M $(print_temp) $(print_volume) [ $(print_bat) ] $(print_date) "
+xsetroot -name " $(print_mem)M $(print_temp) $(print_volume) [ $(print_bat) ] $(print_date) "

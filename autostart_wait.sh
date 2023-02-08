@@ -7,5 +7,5 @@ pasystray &
 sleep 1
 pulseaudio &
 
-sleep 1
-/opt/clash_for_linux/cfw &
+# sleep 1
+# /opt/clash_for_linux/cfw &
