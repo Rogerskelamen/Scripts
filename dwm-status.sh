@@ -1,10 +1,16 @@
 print_volume() {
 	volume="$(amixer get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
-	if test "$volume" -gt 0
+	if test "$volume" -gt 50
 	then
-		echo -e "$volume%"
+		echo -e "🔊$volume%"
+	elif test "$volume" -gt 20
+	then
+		echo -e "🔉$volume%"
+	elif test "$volume" -gt 0
+	then
+		echo -e "🔈$volume%"
 	else
-		echo -e "婢Mute"
+		echo -e "🔇Mute"
 	fi
 }
 
