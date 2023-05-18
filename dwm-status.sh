@@ -1,3 +1,5 @@
+#!/bin/bash
+
 print_volume() {
 	volume="$(amixer get Master | tail -n1 | sed -r 's/.*\[(.*)%\].*/\1/')"
 	if test "$volume" -gt 50
