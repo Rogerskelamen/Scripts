@@ -6,8 +6,6 @@ pasystray &
 
 sleep 1
 pulseaudio &
-
-sleep 1
 nm-applet &
 
 # sleep 1
