@@ -7,5 +7,8 @@ pasystray &
 sleep 1
 pulseaudio &
 
+sleep 1
+nm-applet &
+
 # sleep 1
 # /opt/clash_for_linux/cfw &
