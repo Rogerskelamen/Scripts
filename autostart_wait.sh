@@ -2,7 +2,6 @@
 
 sleep 2
 fcitx5 &
-pasystray &
 
 sleep 1
 pulseaudio &
