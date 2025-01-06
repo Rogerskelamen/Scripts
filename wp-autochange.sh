@@ -1,7 +1,5 @@
 #!/bin/bash
 
-swww init
-
 index=0
 
 while true
