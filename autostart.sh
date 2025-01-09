@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sleep 1
 ~/Scripts/wp-autochange.sh &
 
 sleep 5
